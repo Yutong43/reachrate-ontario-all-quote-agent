@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #21313d;
+  --muted: #687781;
+  --paper: #ffffff;
+  --canvas: #fffdfc;
+  --line: #e5e5df;
+  --rose: #f3dce8;
+  --rose-strong: #eabed4;
+  --aqua: #a8dce2;
+  --aqua-strong: #79c4cf;
+  --sand: #e8b978;
+  --sand-soft: #f6e4ca;
+  --success: #3f806f;
+  --warning: #9b681d;
+  --danger: #a94c4c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--canvas);
+  color: var(--ink);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--canvas);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(121, 196, 207, 0.45);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--rose-strong);
+}
+
+.shell-card {
+  border: 1px solid rgba(33, 49, 61, 0.09);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(213, 163, 187, 0.11);
+}
+
+.form-control {
+  min-height: 54px;
+  width: 100%;
+  border: 1px solid #cfd2d0;
+  border-radius: 10px;
+  background: #fff;
+  padding: 0 15px;
+  color: var(--ink);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+textarea.form-control {
+  min-height: 96px;
+  padding-top: 12px;
+  resize: vertical;
+}
+
+.form-control:hover {
+  border-color: #aeb7b9;
+}
+
+.form-control:focus {
+  border-color: var(--aqua-strong);
+  box-shadow: 0 0 0 4px rgba(168, 220, 226, 0.23);
+  outline: none;
+}
+
+.privacy-mask {
+  -webkit-text-security: disc;
+}
+
+.privacy-mask::placeholder {
+  -webkit-text-security: none;
+}
+
+.label {
+  display: block;
+  margin-bottom: 7px;
+  color: #354550;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.soft-grid {
+  background-image: linear-gradient(rgba(33, 49, 61, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 49, 61, 0.035) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up {
+    animation: fade-up 520ms ease both;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

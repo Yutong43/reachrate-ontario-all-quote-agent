@@ -1,0 +1,14 @@
+{
+  "runId": "{{run_id}}",
+  "registryId": "{{demo_registry_id}}",
+  "marketName": "{{route_label}}",
+  "outcomeStatus": "manual_handoff",
+  "premiumAmount": 220,
+  "premiumPeriod": "monthly",
+  "coverageSummary": "Planned 2025 Toyota Corolla LE; $2M liability, $1,000 deductible, collision, comprehensive, OPCF 44R and no telematics.",
+  "blocker": null,
+  "evidenceNote": "Supervised private-number simulation; excluded from market metrics.",
+  "consentConfirmed": true,
+  "isSimulation": true,
+  "conversationId": "{{system__conversation_id}}"
+}

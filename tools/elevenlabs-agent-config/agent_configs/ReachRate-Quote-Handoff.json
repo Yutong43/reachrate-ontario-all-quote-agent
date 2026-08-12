@@ -1,0 +1,228 @@
+{
+    "name":  "ReachRate Quote Handoff",
+    "conversation_config":  {
+                                "asr":  {
+                                            "quality":  "high",
+                                            "provider":  "scribe_realtime",
+                                            "user_input_audio_format":  "pcm_16000",
+                                            "keywords":  [
+                                                             "Ontario auto insurance",
+                                                             "annual premium",
+                                                             "monthly premium",
+                                                             "deductible",
+                                                             "quote reference",
+                                                             "VIN required",
+                                                             "callback",
+                                                             "two hundred",
+                                                             "two hundred twenty",
+                                                             "per month",
+                                                             "real person"
+                                                         ]
+                                        },
+                                "turn":  {
+                                             "turn_timeout":  10,
+                                             "silence_end_call_timeout":  15,
+                                             "mode":  "turn"
+                                         },
+                                "tts":  {
+                                            "model_id":  "eleven_turbo_v2",
+                                            "voice_id":  "JBFqnCBsd6RMkjVDRZzb",
+                                            "supported_voices":  [
+
+                                                                 ],
+                                            "agent_output_audio_format":  "pcm_16000",
+                                            "optimize_streaming_latency":  3,
+                                            "stability":  0.55,
+                                            "speed":  0.96,
+                                            "similarity_boost":  0.8,
+                                            "pronunciation_dictionary_locators":  [
+
+                                                                                  ]
+                                        },
+                                "conversation":  {
+                                                     "text_only":  false,
+                                                     "max_duration_seconds":  120,
+                                                     "client_events":  [
+                                                                           "audio",
+                                                                           "interruption",
+                                                                           "agent_response",
+                                                                           "user_transcript",
+                                                                           "agent_tool_response"
+                                                                       ]
+                                                 },
+                                "language_presets":  {
+
+                                                     },
+                                "agent":  {
+                                              "first_message":  "Hello. This is ReachRate\u0027s automated AI assistant calling on behalf of {{applicant_display_name}} for a supervised auto-insurance demo. I am not a licensed broker or insurer employee. May I continue and save only a structured, non-audio summary of this simulation?",
+                                              "language":  "en",
+                                              "dynamic_variables":  {
+                                                                        "dynamic_variable_placeholders":  {
+                                                                                                              "applicant_display_name":  "Demo Participant",
+                                                                                                              "run_id":  "demo-run-local",
+                                                                                                              "route_label":  "simulated insurer callback",
+                                                                                                              "demo_registry_id":  "voice_simulation_demo_agent_1",
+                                                                                                              "is_simulation":  "true",
+                                                                                                              "demo_scenario":  "spoken_price",
+                                                                                                              "profile_summary":  "Planned 2025 Toyota Corolla LE, 5,000 kilometres per year, Ontario G licence, first licensed in 2017, clean record.",
+                                                                                                              "coverage_summary":  "Two million dollars liability, one thousand dollar deductible, collision, comprehensive and OPCF 44R, with no telematics.",
+                                                                                                              "opening_policy":  "Disclose automation and non-licensed status. Ask permission to continue and save only a structured non-audio demo summary."
+                                                                                                          }
+                                                                    },
+                                              "prompt":  {
+                                                             "prompt":  "# Role\nYou are ReachRate\u0027s automated voice demo assistant calling only the participant\u0027s own allowlisted number. You act on behalf of {{applicant_display_name}}. You are not a licensed broker, insurer employee, organizer representative, or human applicant. Never claim that {{route_label}} is real; it is a synthetic demo carrier.\n\n# Context\nRun ID: {{run_id}}\nRoute: {{route_label}}\nScenario: {{demo_scenario}}\nRegistry ID: {{demo_registry_id}}\nProfile: {{profile_summary}}\nRequested coverage: {{coverage_summary}}\nSimulation: {{is_simulation}}\n\n# Opening\nThe first message already disclosed automation, representation, non-licensed status, simulation purpose, and asked permission to continue while saving only a structured non-audio summary.\n- If the person\u0027s first response is only a greeting such as hello, repeat the identity and permission question once, concisely.\n- Treat yes, yeah, sure, okay or go ahead as affirmative consent.\n- Do not ask a second consent question. Audio recording is disabled and ReachRate does not retain a transcript.\n\n# Scenario spoken_price\nUse this branch only when {{demo_scenario}} is spoken_price.\n1. After consent, say: \u0027Thank you. This is a synthetic demo only and will not enter official market rankings.\u0027\n2. Briefly read {{profile_summary}} and {{coverage_summary}}.\n3. Ask exactly: \u0027What is the simulated premium per month?\u0027\n4. Extract a clearly spoken numeric amount. Interpret phrases such as \u0027200 per month\u0027, \u0027two hundred dollars a month\u0027, \u0027220 pounds per month\u0027, or \u0027two hundred twenty monthly\u0027 as the numeric monthly amount. In this synthetic Canadian demo, normalize dollars, bucks or pounds to CAD; never claim currency conversion or a real quote.\n5. If the amount or period is unclear, ask one concise clarification. Never invent a number.\n6. Call record_quote_outcome exactly once with outcomeStatus=manual_handoff, marketName={{route_label}}, the numeric premiumAmount, premiumPeriod=monthly unless the person explicitly says annual, coverageSummary combining {{profile_summary}} and {{coverage_summary}}, no blocker, consentConfirmed=true, and isSimulation=true.\n7. After the tool succeeds, say: \u0027Recorded as a synthetic CAD demo result. Thank you.\u0027 Then immediately call end_call. Do not wait for another turn.\n\n# Scenario human_handoff\nUse this branch only when {{demo_scenario}} is human_handoff.\n- If the person says no, asks for a real person, human, representative or licensed broker, do not ask for any premium or details.\n- Call record_quote_outcome exactly once with outcomeStatus=manual_handoff, marketName={{route_label}}, no premiumAmount, no premiumPeriod, coverageSummary=\u0027No quote details collected.\u0027, blocker=\u0027AI assistance declined; participant requested a real person.\u0027, consentConfirmed=false, and isSimulation=true.\n- Say: \u0027Understood. I recorded that you want a real person. No price was saved. Thank you.\u0027 Then immediately call end_call.\n\n# Other endings\nIf the person declines without requesting a human, asks to stop, or the call cannot continue, save no price. End politely. If a tool call already succeeded, never call it again.\n\n# Boundaries\nNever ask for a licence number, full address, date of birth, VIN, policy number, payment data, health information, or another person\u0027s information. Never sell, advise, recommend coverage, bind, accept payment, spoof caller ID, call a real insurer, or portray a synthetic amount as a market quote.",
+                                                             "llm":  "gemini-2.5-flash",
+                                                             "temperature":  0.1,
+                                                             "max_tokens":  -1,
+                                                             "tool_ids":  [],
+                                                             "built_in_tools":  {
+                                                                                    "end_call":  {
+                                                                                                     "name":  "end_call",
+                                                                                                     "params":  {
+                                                                                                                    "system_tool_type":  "end_call"
+                                                                                                                },
+                                                                                                     "type":  "system",
+                                                                                                     "description":  "Immediately end the call after record_quote_outcome succeeds, after the participant requests a real person, when consent is refused, or when the person asks to stop. Do not wait for another user turn after the farewell."
+                                                                                                 }
+                                                                                },
+                                                             "mcp_server_ids":  [
+
+                                                                                ],
+                                                             "native_mcp_server_ids":  [
+
+                                                                                       ],
+                                                             "knowledge_base":  [
+
+                                                                                ],
+                                                             "ignore_default_personality":  false,
+                                                             "rag":  {
+                                                                         "enabled":  false,
+                                                                         "embedding_model":  "e5_mistral_7b_instruct",
+                                                                         "max_vector_distance":  0.6,
+                                                                         "max_documents_length":  50000,
+                                                                         "max_retrieved_rag_chunks_count":  20
+                                                                     },
+                                                             "custom_llm":  null
+                                                         }
+                                          }
+                            },
+    "platform_settings":  {
+                              "auth":  {
+                                           "enable_auth":  false,
+                                           "allowlist":  [
+
+                                                         ],
+                                           "shareable_token":  null
+                                       },
+                              "evaluation":  {
+                                                 "criteria":  [
+
+                                                              ]
+                                             },
+                              "widget":  {
+                                             "variant":  "full",
+                                             "placement":  "bottom-right",
+                                             "expandable":  "never",
+                                             "avatar":  {
+                                                            "type":  "orb",
+                                                            "color_1":  "#21313d",
+                                                            "color_2":  "#a8dce2"
+                                                        },
+                                             "feedback_mode":  "none",
+                                             "bg_color":  "#fffefd",
+                                             "text_color":  "#21313d",
+                                             "btn_color":  "#21313d",
+                                             "btn_text_color":  "#ffffff",
+                                             "border_color":  "#e5e5df",
+                                             "focus_color":  "#79c4cf",
+                                             "shareable_page_show_terms":  true,
+                                             "show_avatar_when_collapsed":  false,
+                                             "disable_banner":  false,
+                                             "mic_muting_enabled":  true,
+                                             "transcript_enabled":  false,
+                                             "text_input_enabled":  false,
+                                             "text_contents":  {
+
+                                                               },
+                                             "language_selector":  false,
+                                             "supports_text_only":  false,
+                                             "language_presets":  {
+
+                                                                  },
+                                             "styles":  {
+
+                                                        },
+                                             "border_radius":  null,
+                                             "btn_radius":  null,
+                                             "action_text":  null,
+                                             "start_call_text":  null,
+                                             "end_call_text":  null,
+                                             "expand_text":  null,
+                                             "listening_text":  null,
+                                             "speaking_text":  null,
+                                             "shareable_page_text":  null,
+                                             "terms_text":  "This prototype is automated. Continue only if you consent to speak with an AI assistant. Recording or transcript retention requires a separate affirmative response during the call.",
+                                             "terms_html":  null,
+                                             "terms_key":  null,
+                                             "override_link":  null,
+                                             "custom_avatar_path":  null
+                                         },
+                              "data_collection":  {
+
+                                                  },
+                              "overrides":  {
+                                                "conversation_config_override":  {
+                                                                                     "tts":  {
+                                                                                                 "voice_id":  false
+                                                                                             },
+                                                                                     "conversation":  {
+                                                                                                          "text_only":  false
+                                                                                                      },
+                                                                                     "agent":  {
+                                                                                                   "first_message":  false,
+                                                                                                   "language":  false,
+                                                                                                   "prompt":  {
+                                                                                                                  "prompt":  false
+                                                                                                              }
+                                                                                               }
+                                                                                 },
+                                                "custom_llm_extra_body":  false,
+                                                "enable_conversation_initiation_client_data_from_webhook":  false
+                                            },
+                              "call_limits":  {
+                                                  "agent_concurrency_limit":  1,
+                                                  "daily_limit":  5,
+                                                  "bursting_enabled":  false
+                                              },
+                              "privacy":  {
+                                              "record_voice":  false,
+                                              "retention_days":  0,
+                                              "delete_transcript_and_pii":  true,
+                                              "delete_audio":  true,
+                                              "apply_to_existing_conversations":  false,
+                                              "zero_retention_mode":  false
+                                          },
+                              "workspace_overrides":  {
+                                                          "webhooks":  {
+                                                                           "post_call_webhook_id":  null
+                                                                       },
+                                                          "conversation_initiation_client_data_webhook":  null
+                                                      },
+                              "safety":  {
+                                             "is_blocked_ivc":  false,
+                                             "is_blocked_non_ivc":  false,
+                                             "ignore_safety_evaluation":  false
+                                         },
+                              "testing":  {
+                                              "attached_tests":  [
+
+                                                                 ]
+                                          },
+                              "ban":  null
+                          },
+    "tags":  [
+                 "hackathon",
+                 "personal-use",
+                 "simulation-first"
+             ]
+}

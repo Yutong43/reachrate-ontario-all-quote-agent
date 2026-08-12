@@ -1,0 +1,2547 @@
+{
+  "schema_version": "1.0",
+  "snapshot_as_of": "2026-08-12T18:46:44Z",
+  "source_audit_generated_at": "2026-08-11T20:24:39Z",
+  "scope_note": "Consumer journeys are executable shopping paths. Insurer groups and legal entities are separate regulatory reference layers and do not each represent a distinct consumer quote.",
+  "counts": {
+    "consumer_journeys": 24,
+    "insurer_groups": 32,
+    "legal_entities": 60,
+    "route_level_rate_source_keys": 24,
+    "resolved_rate_source_identities": 7,
+    "provisional_rate_source_identities": 16,
+    "unresolved_rate_source_identities": 1
+  },
+  "consumer_journeys": [
+    {
+      "registry_id": "aggregator_mychoice_on",
+      "brand_or_program": "MyChoice",
+      "legal_underwriter": "Returned insurer must be captured from result",
+      "insurer_group": "Multiple / returned result",
+      "licensed_intermediary": "Returned brokerage must be captured",
+      "distribution_type": "aggregator",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone"
+      ],
+      "distinct_rate_source_id": "aggregator_mychoice_on_returned_underwriter_required",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://www.mychoice.ca/insurance/car/",
+      "public_phone_route": "1-888-453-4644",
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "at_bind",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": true
+      },
+      "automation_notes": "The public quote journey and current Terms of Use were reviewed. Next action: Use a permitted manual/reference path only; ReachRate does not automate this destination.",
+      "status": "blocked",
+      "audit_status": "terms_restricted",
+      "status_reason": "The public quote journey and current Terms of Use were reviewed.",
+      "next_action": "Use a permitted manual/reference path only; ReachRate does not automate this destination.",
+      "source_url": "https://www.mychoice.ca/insurance/car/",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=mychoice"
+    },
+    {
+      "registry_id": "direct_allstate_on",
+      "brand_or_program": "Allstate",
+      "legal_underwriter": "Allstate Insurance Company of Canada",
+      "insurer_group": "Allstate",
+      "licensed_intermediary": "Allstate agency path",
+      "distribution_type": "agent",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web"
+      ],
+      "distinct_rate_source_id": "allstate_canada_standard_ppa",
+      "rate_source_identity_status": "resolved",
+      "quote_url": "https://apps.allstate.ca/quickquote/common/landing.aspx#b",
+      "public_phone_route": null,
+      "requirements": {
+        "requires_licence": false,
+        "requires_VIN": false,
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": true
+      },
+      "automation_notes": "Postal code and Auto were mapped on the current Quick Quote intake. The official Go submission returned ERR_HTTP2_PROTOCOL_ERROR; the bounded retry was not converted into a quote. Next action: Retry once later or use another route. Do not infer a premium from the failed page.",
+      "status": "unreachable",
+      "audit_status": "transient_network_error",
+      "status_reason": "Postal code and Auto were mapped on the current Quick Quote intake. The official Go submission returned ERR_HTTP2_PROTOCOL_ERROR; the bounded retry was not converted into a quote.",
+      "next_action": "Retry once later or use another route. Do not infer a premium from the failed page.",
+      "source_url": "https://apps.allstate.ca/quickquote/common/landing.aspx#b",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=allstate"
+    },
+    {
+      "registry_id": "direct_aviva_on",
+      "brand_or_program": "Aviva Direct",
+      "legal_underwriter": "S&Y Insurance Company",
+      "insurer_group": "Aviva",
+      "licensed_intermediary": null,
+      "distribution_type": "direct",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone"
+      ],
+      "distinct_rate_source_id": "aviva_returned_program_required",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://www.aviva.ca/en/direct/",
+      "public_phone_route": "1-855-788-9090",
+      "requirements": {
+        "requires_licence": false,
+        "requires_VIN": "at_bind",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": true
+      },
+      "automation_notes": "Vehicle, driver and history were completed. The official Double-check assumptions declaration appeared and reference Q022763742 was generated. Next action: Personally review the assumptions and click the declaration, then resume the same tab.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "Vehicle, driver and history were completed. The official Double-check assumptions declaration appeared and reference Q022763742 was generated.",
+      "next_action": "Personally review the assumptions and click the declaration, then resume the same tab.",
+      "source_url": "https://www.aviva.ca/en/direct/",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=aviva"
+    },
+    {
+      "registry_id": "direct_belairdirect_on",
+      "brand_or_program": "belairdirect",
+      "legal_underwriter": "Belair Insurance Company Inc.",
+      "insurer_group": "Intact",
+      "licensed_intermediary": null,
+      "distribution_type": "direct",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone"
+      ],
+      "distinct_rate_source_id": "belair_intact_direct_on",
+      "rate_source_identity_status": "resolved",
+      "quote_url": "https://webquote.app.belairdirect.com/?language=en&province=on&f=c",
+      "public_phone_route": "1-833-644-7899",
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": "unknown",
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "The official landing page listed driver's licence, vehicle and home-address requirements. Its quote application rendered a blank shell plus an invisible reCAPTCHA in connected Chrome. Next action: Complete human verification and use only the applicant's real licence/address if the form becomes available.",
+      "status": "blocked",
+      "audit_status": "access_checkpoint_reached",
+      "status_reason": "The official landing page listed driver's licence, vehicle and home-address requirements. Its quote application rendered a blank shell plus an invisible reCAPTCHA in connected Chrome.",
+      "next_action": "Complete human verification and use only the applicant's real licence/address if the form becomes available.",
+      "source_url": "https://webquote.app.belairdirect.com/?language=en&province=on&f=c",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=belairdirect"
+    },
+    {
+      "registry_id": "direct_caa_on",
+      "brand_or_program": "CAA Insurance",
+      "legal_underwriter": "CAA Insurance Company",
+      "insurer_group": "CAA",
+      "licensed_intermediary": null,
+      "distribution_type": "direct",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone"
+      ],
+      "distinct_rate_source_id": "caa_insurance_on",
+      "rate_source_identity_status": "resolved",
+      "quote_url": "https://car-insurance.caasco.com/auto/intro?refd=autoquote",
+      "public_phone_route": "1-855-243-5484",
+      "requirements": {
+        "requires_licence": true,
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "The live first page required full address, effective date, risk declarations and acceptance of privacy/terms before vehicle questions. Next action: Enter the real address and personally accept the displayed privacy/terms statement.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "The live first page required full address, effective date, risk declarations and acceptance of privacy/terms before vehicle questions.",
+      "next_action": "Enter the real address and personally accept the displayed privacy/terms statement.",
+      "source_url": "https://car-insurance.caasco.com/auto/intro?refd=autoquote",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=caa"
+    },
+    {
+      "registry_id": "direct_cooperators_on",
+      "brand_or_program": "Co-operators",
+      "legal_underwriter": "Co-operators General Insurance Company",
+      "insurer_group": "Co-operators",
+      "licensed_intermediary": "Co-operators advisor path",
+      "distribution_type": "agent",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone"
+      ],
+      "distinct_rate_source_id": "cooperators_standard_on",
+      "rate_source_identity_status": "resolved",
+      "quote_url": "https://quoting.cooperators.ca/quote/IRAuto_CG?lang=en",
+      "public_phone_route": "1-833-314-4403",
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "The current IRAuto first page required vehicle year, full address, coverage start date and explicit privacy/collection agreement. Next action: Enter the real address and personally agree to the displayed privacy collection notice.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "The current IRAuto first page required vehicle year, full address, coverage start date and explicit privacy/collection agreement.",
+      "next_action": "Enter the real address and personally agree to the displayed privacy collection notice.",
+      "source_url": "https://quoting.cooperators.ca/quote/IRAuto_CG?lang=en",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=cooperators"
+    },
+    {
+      "registry_id": "direct_desjardins_on",
+      "brand_or_program": "Desjardins Insurance",
+      "legal_underwriter": "Certas legal entity must be captured from result",
+      "insurer_group": "Desjardins",
+      "licensed_intermediary": "Desjardins agent path",
+      "distribution_type": "agent",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone"
+      ],
+      "distinct_rate_source_id": "desjardins_certas_returned_program",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://clients.desjardinsgeneralinsurance.com/vehicle-quote/init/welcome?cs=au&mca=d&prv=on",
+      "public_phone_route": "1-888-277-8726",
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "The Ontario quote application was opened directly. In connected Chrome it exposed only the application document and reCAPTCHA frame, with no safe form controls. Next action: Complete visible human verification if the site permits it, then resume; no bypass is attempted.",
+      "status": "blocked",
+      "audit_status": "access_checkpoint_reached",
+      "status_reason": "The Ontario quote application was opened directly. In connected Chrome it exposed only the application document and reCAPTCHA frame, with no safe form controls.",
+      "next_action": "Complete visible human verification if the site permits it, then resume; no bypass is attempted.",
+      "source_url": "https://clients.desjardinsgeneralinsurance.com/vehicle-quote/init/welcome?cs=au&mca=d&prv=on",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=desjardins"
+    },
+    {
+      "registry_id": "direct_rbc_on",
+      "brand_or_program": "RBC Insurance",
+      "legal_underwriter": "Aviva legal entity must be captured from result",
+      "insurer_group": "Aviva",
+      "licensed_intermediary": "RBC Insurance distribution route",
+      "distribution_type": "affinity",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone"
+      ],
+      "distinct_rate_source_id": "aviva_rbc_program_verify",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://www1.myrbcsso.rbcinsurance.com/ada/quoter?productType=auto&campaignID=E4APPON&lang=EN",
+      "public_phone_route": "1-844-509-7475",
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "unknown",
+        "requires_membership": "unknown",
+        "requires_human": "unknown",
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "Postal code opened the live vehicle form. The form is the same Aviva BOL engine family used by other Aviva-distributed routes and proceeds through vehicle, driver and declaration stages. Next action: Complete the route and personally review the final assumptions/declaration.",
+      "status": "unresolved",
+      "audit_status": "engine_verified",
+      "status_reason": "Postal code opened the live vehicle form. The form is the same Aviva BOL engine family used by other Aviva-distributed routes and proceeds through vehicle, driver and declaration stages.",
+      "next_action": "Complete the route and personally review the final assumptions/declaration.",
+      "source_url": "https://www1.myrbcsso.rbcinsurance.com/ada/quoter?productType=auto&campaignID=E4APPON&lang=EN",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=rbc"
+    },
+    {
+      "registry_id": "direct_sonnet_on",
+      "brand_or_program": "Sonnet",
+      "legal_underwriter": "Sonnet Insurance Company",
+      "insurer_group": "Definity",
+      "licensed_intermediary": null,
+      "distribution_type": "direct",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web"
+      ],
+      "distinct_rate_source_id": "sonnet_definity_direct_on",
+      "rate_source_identity_status": "resolved",
+      "quote_url": "https://www.sonnet.ca/auto-insurance",
+      "public_phone_route": null,
+      "requirements": {
+        "requires_licence": true,
+        "requires_VIN": true,
+        "requires_membership": false,
+        "requires_human": false,
+        "supports_without_VIN": false
+      },
+      "automation_notes": "The official quote requirements were checked against the planned-vehicle profile. Next action: Use a real VIN and Ontario driver's licence number. Neither may be fabricated for this test.",
+      "status": "ineligible",
+      "audit_status": "profile_blocked",
+      "status_reason": "The official quote requirements were checked against the planned-vehicle profile.",
+      "next_action": "Use a real VIN and Ontario driver's licence number. Neither may be fabricated for this test.",
+      "source_url": "https://www.sonnet.ca/auto-insurance",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=sonnet"
+    },
+    {
+      "registry_id": "direct_squareone_on",
+      "brand_or_program": "Square One",
+      "legal_underwriter": "Zurich Insurance Company Ltd (Canadian Branch)",
+      "insurer_group": "Zurich",
+      "licensed_intermediary": "Square One distribution route",
+      "distribution_type": "direct",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone"
+      ],
+      "distinct_rate_source_id": "zurich_squareone_on",
+      "rate_source_identity_status": "resolved",
+      "quote_url": "https://www.squareone.ca/car",
+      "public_phone_route": "1-855-331-6933",
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": "unknown",
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "The working quote journey stopped at a Google-Places-style full residential/garaging address before vehicle questions. Next action: Authorize and select the applicant's real address suggestion on the official page.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "The working quote journey stopped at a Google-Places-style full residential/garaging address before vehicle questions.",
+      "next_action": "Authorize and select the applicant's real address suggestion on the official page.",
+      "source_url": "https://www.squareone.ca/car",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=squareone"
+    },
+    {
+      "registry_id": "direct_td_on",
+      "brand_or_program": "TD Insurance",
+      "legal_underwriter": "TD legal entity must be captured from result",
+      "insurer_group": "TD",
+      "licensed_intermediary": null,
+      "distribution_type": "direct",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone"
+      ],
+      "distinct_rate_source_id": "td_returned_legal_entity",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://www.tdinsurance.com/quote/car/ontario",
+      "public_phone_route": "1-855-892-0407",
+      "requirements": {
+        "requires_licence": true,
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": "unknown",
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "A full 2025 Corolla route was completed through vehicle, use, coverage, discounts and driver identity. The next page required a complete residential address. Selecting gender X routed directly to phone support. Next action: Provide a real residential/garaging address. If the applicant uses gender X, use TD's phone route instead of claiming web completion.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "A full 2025 Corolla route was completed through vehicle, use, coverage, discounts and driver identity. The next page required a complete residential address. Selecting gender X routed directly to phone support.",
+      "next_action": "Provide a real residential/garaging address. If the applicant uses gender X, use TD's phone route instead of claiming web completion.",
+      "source_url": "https://www.tdinsurance.com/quote/car/ontario",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=td"
+    },
+    {
+      "registry_id": "affinity_personal_on",
+      "brand_or_program": "The Personal",
+      "legal_underwriter": "The Personal Insurance Company or returned Certas entity",
+      "insurer_group": "Desjardins",
+      "licensed_intermediary": null,
+      "distribution_type": "affinity",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web"
+      ],
+      "distinct_rate_source_id": "desjardins_personal_affinity_verify",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://www.thepersonal.com/insurance/auto-insurance.html",
+      "public_phone_route": null,
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "unknown",
+        "requires_membership": true,
+        "requires_human": "unknown",
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "The current group auto-insurance journey and eligibility requirement were verified. Next action: Provide a real eligible employer, professional, union or alumni relationship.",
+      "status": "affinity_restricted",
+      "audit_status": "profile_blocked",
+      "status_reason": "The current group auto-insurance journey and eligibility requirement were verified.",
+      "next_action": "Provide a real eligible employer, professional, union or alumni relationship.",
+      "source_url": "https://www.thepersonal.com/insurance/auto-insurance.html",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=thepersonal"
+    },
+    {
+      "registry_id": "aggregator_rates_on",
+      "brand_or_program": "Rates.ca",
+      "legal_underwriter": "Returned insurer must be captured from result",
+      "insurer_group": "Multiple / returned result",
+      "licensed_intermediary": "Returned brokerage/intermediary must be captured",
+      "distribution_type": "aggregator",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone"
+      ],
+      "distinct_rate_source_id": "aggregator_rates_on_returned_underwriter_required",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://rates.ca/insurance-quotes/auto/ontario",
+      "public_phone_route": "1-844-726-0907",
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": "unknown",
+        "supports_without_VIN": true
+      },
+      "automation_notes": "Vehicle, driver, history and discounts were completed. The final page required email, phone and consent to quote follow-up before showing results. Next action: Enter authorized contact details and personally choose whether to accept follow-up consent.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "Vehicle, driver, history and discounts were completed. The final page required email, phone and consent to quote follow-up before showing results.",
+      "next_action": "Enter authorized contact details and personally choose whether to accept follow-up consent.",
+      "source_url": "https://rates.ca/insurance-quotes/auto/ontario",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=rates"
+    },
+    {
+      "registry_id": "aggregator_lowestrates_on",
+      "brand_or_program": "LowestRates.ca",
+      "legal_underwriter": "Returned insurer must be captured from result",
+      "insurer_group": "Multiple / returned result",
+      "licensed_intermediary": "Returned brokerage/intermediary must be captured",
+      "distribution_type": "aggregator",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web"
+      ],
+      "distinct_rate_source_id": "aggregator_lowestrates_on_returned_underwriter_required",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://www.lowestrates.ca/insurance/auto/ontario",
+      "public_phone_route": null,
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": "unknown",
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "The 2025 Corolla vehicle, driver, history and discount flow was completed. The final Get Free Quotes page required email, phone and disclosure/follow-up consent. Next action: Supply authorized contact details and personally accept or decline follow-up consent.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "The 2025 Corolla vehicle, driver, history and discount flow was completed. The final Get Free Quotes page required email, phone and disclosure/follow-up consent.",
+      "next_action": "Supply authorized contact details and personally accept or decline follow-up consent.",
+      "source_url": "https://www.lowestrates.ca/insurance/auto/ontario",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=lowestrates"
+    },
+    {
+      "registry_id": "broker_surex_on",
+      "brand_or_program": "Surex",
+      "legal_underwriter": "Returned insurer must be captured from result",
+      "insurer_group": "Multiple / returned result",
+      "licensed_intermediary": "Surex licensed brokerage route",
+      "distribution_type": "broker",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone",
+        "licensed_intermediary"
+      ],
+      "distinct_rate_source_id": "broker_surex_on_returned_underwriter_required",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://www.surex.com/insurance/auto-car",
+      "public_phone_route": "1-855-242-6612",
+      "requirements": {
+        "requires_licence": true,
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "A live quote ID was created and the vehicle page opened. Before progression it required vehicle details and selection of the full address where the vehicle will be parked. Next action: Authorize and select the real parking/garaging address, then resume the same quote ID.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "A live quote ID was created and the vehicle page opened. Before progression it required vehicle details and selection of the full address where the vehicle will be parked.",
+      "next_action": "Authorize and select the real parking/garaging address, then resume the same quote ID.",
+      "source_url": "https://www.surex.com/insurance/auto-car",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=surex"
+    },
+    {
+      "registry_id": "broker_thinkinsure_on",
+      "brand_or_program": "ThinkInsure",
+      "legal_underwriter": "Returned insurer must be captured from result",
+      "insurer_group": "Multiple / returned result",
+      "licensed_intermediary": "ThinkInsure licensed brokerage route",
+      "distribution_type": "broker",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone",
+        "licensed_intermediary"
+      ],
+      "distinct_rate_source_id": "broker_thinkinsure_on_returned_underwriter_required",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://www.thinkinsure.ca/quotes/auto?postal_code=M2N0C1",
+      "public_phone_route": "1-855-550-5515",
+      "requirements": {
+        "requires_licence": true,
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "The live quote form required policy date, legal name, email, phone and reCAPTCHA before vehicle questions. Next action: Provide authorized contact details and complete reCAPTCHA yourself.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "The live quote form required policy date, legal name, email, phone and reCAPTCHA before vehicle questions.",
+      "next_action": "Provide authorized contact details and complete reCAPTCHA yourself.",
+      "source_url": "https://www.thinkinsure.ca/quotes/auto?postal_code=M2N0C1",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=thinkinsure"
+    },
+    {
+      "registry_id": "broker_onlia_on",
+      "brand_or_program": "Onlia",
+      "legal_underwriter": "Returned insurer must be captured from result",
+      "insurer_group": "Multiple / returned result",
+      "licensed_intermediary": "Onlia digital brokerage route",
+      "distribution_type": "broker",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone",
+        "licensed_intermediary"
+      ],
+      "distinct_rate_source_id": "broker_onlia_on_returned_underwriter_required",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://app.onlia.ca/#/auto/personal-info",
+      "public_phone_route": "1-844-472-7905",
+      "requirements": {
+        "requires_licence": true,
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "The first personal-information page required legal name, full street address, policy date, Ontario driver's licence number and acceptance of terms. Next action: Use the applicant's real address/licence and personally accept the terms before lookup.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "The first personal-information page required legal name, full street address, policy date, Ontario driver's licence number and acceptance of terms.",
+      "next_action": "Use the applicant's real address/licence and personally accept the terms before lookup.",
+      "source_url": "https://app.onlia.ca/#/auto/personal-info",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=onlia"
+    },
+    {
+      "registry_id": "residual_facility_on",
+      "brand_or_program": "Facility Association residual market",
+      "legal_underwriter": "Facility Association",
+      "insurer_group": "Facility Association",
+      "licensed_intermediary": "Must be accessed through a licensed intermediary",
+      "distribution_type": "residual",
+      "product_scope": "nonstandard_PPA",
+      "channels": [
+        "web",
+        "licensed_intermediary"
+      ],
+      "distinct_rate_source_id": "facility_association_residual_on",
+      "rate_source_identity_status": "resolved",
+      "quote_url": "https://www.facilityassociation.com/",
+      "public_phone_route": null,
+      "requirements": {
+        "requires_licence": true,
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": false
+      },
+      "automation_notes": "The official residual-market operating model was verified. Facility Association is an administrator, and policies are accessed through a licensed broker/agent and servicing carrier. Next action: Use a licensed intermediary only when a voluntary-market insurer has declined the risk under an approved rule.",
+      "status": "manual_handoff",
+      "audit_status": "intermediary_required",
+      "status_reason": "The official residual-market operating model was verified. Facility Association is an administrator, and policies are accessed through a licensed broker/agent and servicing carrier.",
+      "next_action": "Use a licensed intermediary only when a voluntary-market insurer has declined the risk under an approved rule.",
+      "source_url": "https://www.facilityassociation.com/",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=facility"
+    },
+    {
+      "registry_id": "collector_hagerty_on",
+      "brand_or_program": "Hagerty collector program",
+      "legal_underwriter": "Aviva legal entity must be captured from result",
+      "insurer_group": "Aviva",
+      "licensed_intermediary": "Hagerty program route",
+      "distribution_type": "MGA_program",
+      "product_scope": "collector",
+      "channels": [
+        "web",
+        "phone",
+        "licensed_intermediary"
+      ],
+      "distinct_rate_source_id": "aviva_hagerty_collector_on",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://www.hagerty.ca/insurance/",
+      "public_phone_route": "1-888-348-9369",
+      "requirements": {
+        "requires_licence": true,
+        "requires_VIN": true,
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": false
+      },
+      "automation_notes": "Official eligibility and underwriting disclosures were verified. The program is for collector vehicles not used as a daily driver. Next action: Use only for an eligible collector vehicle and household; the 2025 Corolla daily-driver test is out of scope.",
+      "status": "specialty_only",
+      "audit_status": "not_applicable",
+      "status_reason": "Official eligibility and underwriting disclosures were verified. The program is for collector vehicles not used as a daily driver.",
+      "next_action": "Use only for an eligible collector vehicle and household; the 2025 Corolla daily-driver test is out of scope.",
+      "source_url": "https://www.hagerty.ca/insurance/",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=hagerty"
+    },
+    {
+      "registry_id": "mutual_locator_on",
+      "brand_or_program": "Ontario Mutuals locator",
+      "legal_underwriter": "Specific mutual must be identified",
+      "insurer_group": "Ontario Mutuals / returned mutual",
+      "licensed_intermediary": "Specific mutual agent or broker",
+      "distribution_type": "mutual",
+      "product_scope": "unknown",
+      "channels": [
+        "web",
+        "local_agent"
+      ],
+      "distinct_rate_source_id": "specific_mutual_required",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://www.ontariomutuals.ca/find-a-mutual/",
+      "public_phone_route": null,
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "unknown",
+        "requires_membership": "unknown",
+        "requires_human": true,
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "The public locator route was verified; it identifies territory-specific mutuals rather than returning one central premium. Next action: Select the applicable local mutual, then use that mutual's agent or broker route.",
+      "status": "unresolved",
+      "audit_status": "discovery_only",
+      "status_reason": "The public locator route was verified; it identifies territory-specific mutuals rather than returning one central premium.",
+      "next_action": "Select the applicable local mutual, then use that mutual's agent or broker route.",
+      "source_url": "https://www.ontariomutuals.ca/find-a-mutual/",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=mutuals"
+    },
+    {
+      "registry_id": "broker_pcinsurance_on",
+      "brand_or_program": "PC Insurance",
+      "legal_underwriter": "Returned insurer must be captured from result",
+      "insurer_group": "Multiple / returned result",
+      "licensed_intermediary": "PC Insurance",
+      "distribution_type": "broker",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone",
+        "licensed_intermediary"
+      ],
+      "distinct_rate_source_id": "pcinsurance_returned_underwriter_required",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://quote.pcinsurance.ca/pci/quoter",
+      "public_phone_route": "1-866-465-4144",
+      "requirements": {
+        "requires_licence": "later",
+        "requires_VIN": "at_purchase",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": true
+      },
+      "automation_notes": "Vehicle, driver and history were completed and reference Q022764054 was generated. The final assumptions required the vehicle to be registered in Ontario and owned/registered to the applicant or spouse, which conflicts with the current planned-vehicle profile. Next action: Use a truthfully owned/registered vehicle profile or stop; do not attest to a false ownership assumption.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "Vehicle, driver and history were completed and reference Q022764054 was generated. The final assumptions required the vehicle to be registered in Ontario and owned/registered to the applicant or spouse, which conflicts with the current planned-vehicle profile.",
+      "next_action": "Use a truthfully owned/registered vehicle profile or stop; do not attest to a false ownership assumption.",
+      "source_url": "https://quote.pcinsurance.ca/pci/quoter",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=pcinsurance"
+    },
+    {
+      "registry_id": "broker_inova_on",
+      "brand_or_program": "Inova",
+      "legal_underwriter": "Returned insurer must be captured from result",
+      "insurer_group": "Multiple / returned result",
+      "licensed_intermediary": "Inova Insurance Brokers Inc.",
+      "distribution_type": "broker",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone",
+        "licensed_intermediary"
+      ],
+      "distinct_rate_source_id": "inova_returned_underwriter_required",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://quote.inovainc.ca/auto/get-started/?postal_code=M2N0C1",
+      "public_phone_route": "1-866-967-7707",
+      "requirements": {
+        "requires_licence": "later",
+        "requires_VIN": "at_purchase",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": true
+      },
+      "automation_notes": "The current auto quote form required email, phone and a disclosure-attestation checkbox before starting; driver's licence was optional at this step. Next action: Provide authorized contact details and personally confirm the disclosure acknowledgement.",
+      "status": "manual_handoff",
+      "audit_status": "checkpoint_reached",
+      "status_reason": "The current auto quote form required email, phone and a disclosure-attestation checkbox before starting; driver's licence was optional at this step.",
+      "next_action": "Provide authorized contact details and personally confirm the disclosure acknowledgement.",
+      "source_url": "https://quote.inovainc.ca/auto/get-started/?postal_code=M2N0C1",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=inova"
+    },
+    {
+      "registry_id": "aggregator_insurancehotline_on",
+      "brand_or_program": "InsuranceHotline.com",
+      "legal_underwriter": "Returned insurer must be captured from result",
+      "insurer_group": "Multiple / returned result",
+      "licensed_intermediary": "Returned broker must be captured",
+      "distribution_type": "aggregator",
+      "product_scope": "standard_PPA",
+      "channels": [
+        "web",
+        "phone"
+      ],
+      "distinct_rate_source_id": "insurancehotline_returned_underwriter_required",
+      "rate_source_identity_status": "provisional_pending_result",
+      "quote_url": "https://www.insurancehotline.com/car-insurance-quotes",
+      "public_phone_route": "1-855-821-7312",
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "at_purchase",
+        "requires_membership": false,
+        "requires_human": true,
+        "supports_without_VIN": true
+      },
+      "automation_notes": "The live route opened insurancehotlineservices.insurancehotline.com and exposed the same Vehicle / Driver / Discount RATESDOTCA engine as LowestRates. The duplicate journey was not resubmitted after the identical final contact-consent gate was proven. Next action: Use one RATESDOTCA-family route for the profile, then deduplicate returned carriers rather than submitting repeated lead forms.",
+      "status": "unresolved",
+      "audit_status": "duplicate_engine_verified",
+      "status_reason": "The live route opened insurancehotlineservices.insurancehotline.com and exposed the same Vehicle / Driver / Discount RATESDOTCA engine as LowestRates. The duplicate journey was not resubmitted after the identical final contact-consent gate was proven.",
+      "next_action": "Use one RATESDOTCA-family route for the profile, then deduplicate returned carriers rather than submitting repeated lead forms.",
+      "source_url": "https://www.insurancehotline.com/car-insurance-quotes",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=insurancehotline"
+    },
+    {
+      "registry_id": "broker_scoop_on",
+      "brand_or_program": "Scoop Insurance",
+      "legal_underwriter": "No current quote route verified",
+      "insurer_group": "Rates.ca Group",
+      "licensed_intermediary": "Scoop Insurance",
+      "distribution_type": "broker",
+      "product_scope": "unknown",
+      "channels": [
+        "web",
+        "licensed_intermediary"
+      ],
+      "distinct_rate_source_id": "scoop_route_unavailable",
+      "rate_source_identity_status": "unresolved",
+      "quote_url": "https://scoopinsurance.ca/",
+      "public_phone_route": null,
+      "requirements": {
+        "requires_licence": "unknown",
+        "requires_VIN": "unknown",
+        "requires_membership": false,
+        "requires_human": "unknown",
+        "supports_without_VIN": "unknown"
+      },
+      "automation_notes": "The previously cited auto page returned a missing-page experience and no current price-capable quote form was verified. Next action: Do not claim a Scoop quote until a current official route is found.",
+      "status": "unresolved",
+      "audit_status": "route_unavailable",
+      "status_reason": "The previously cited auto page returned a missing-page experience and no current price-capable quote form was verified.",
+      "next_action": "Do not claim a Scoop quote until a current official route is found.",
+      "source_url": "https://scoopinsurance.ca/",
+      "source_citation": "Official route and supervised browser verification, 2026-08-11.",
+      "last_verified_at": "2026-08-11T20:24:39Z",
+      "evidence_artifact": "data/online-route-audit.json#route_id=scoop"
+    }
+  ],
+  "insurer_groups": [
+    {
+      "registry_id": "regulatory_group_aig",
+      "insurer_group": "AIG",
+      "legal_entities": [
+        "AIG Insurance Company of Canada"
+      ],
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.aig.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "No normal Ontario personal-auto shopping path. Treat as out of scope for this clean PPA profile.",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_allstate",
+      "insurer_group": "Allstate",
+      "legal_entities": [
+        "Allstate Insurance Company of Canada",
+        "Esurance Insurance Company of Canada",
+        "Pafco Insurance Company",
+        "Pembridge Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "allstate",
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.allstate.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Direct web quote is possible; Pafco and Pembridge are broker-panel candidates. A returned premium is not guaranteed.",
+      "validation_note": "Allstate direct; Pafco and Pembridge are broker-distributed.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_aviva",
+      "insurer_group": "Aviva",
+      "legal_entities": [
+        "Aviva General Insurance Company",
+        "Aviva Insurance Company of Canada",
+        "S&Y Insurance Company",
+        "Scottish & York Insurance Co. Limited",
+        "Traders General Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "aviva",
+        "rates",
+        "rbc",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.aviva.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Aviva Direct can quote online without a VIN at the quote stage; RBC and broker programs are separate rate sources.",
+      "validation_note": "Direct, RBC, broker and program routes require deduplication.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_beneva",
+      "insurer_group": "Beneva",
+      "legal_entities": [
+        "Unica Insurance Inc."
+      ],
+      "consumer_route_ids": [
+        "rates",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.beneva.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Unica is broker-distributed in Ontario. A broker panel or advisor must return the actual carrier and premium.",
+      "validation_note": "Broker route.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_caa",
+      "insurer_group": "CAA",
+      "legal_entities": [
+        "CAA Insurance Company",
+        "Echelon Insurance"
+      ],
+      "consumer_route_ids": [
+        "caa",
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.caainsurancecompany.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "CAA has an online quote path but its checklist includes a driver licence number; Echelon is a broker/non-standard path.",
+      "validation_note": "CAA direct; Echelon broker/non-standard.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_chubb",
+      "insurer_group": "Chubb",
+      "legal_entities": [
+        "Chubb Insurance Company of Canada"
+      ],
+      "consumer_route_ids": [],
+      "access_class": "high_net_worth",
+      "channel": "broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.chubb.com/ca-en/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Personal auto exists, but quoting is through an appointed broker and is aimed at high-net-worth households.",
+      "validation_note": "High-net-worth or specialty broker.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_coop",
+      "insurer_group": "Co-op",
+      "legal_entities": [
+        "COSECO Insurance Company",
+        "CUMIS General Insurance Company",
+        "Co-operators General Insurance Company",
+        "The Sovereign General Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "cooperators"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.cooperators.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Co-operators advertises online quote and purchase. Affinity entities still require returned-program validation.",
+      "validation_note": "Co-operators web/agent; affinity and specialty entities need validation.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_commonwell",
+      "insurer_group": "Commonwell",
+      "legal_entities": [
+        "The Commonwell Mutual Insurance Group"
+      ],
+      "consumer_route_ids": [
+        "mutuals",
+        "thinkinsure"
+      ],
+      "access_class": "mutual_local",
+      "channel": "local_agent",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://thecommonwell.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Use a local broker/agent or a panel that explicitly returns Commonwell; there is no central consumer quote engine to assume.",
+      "validation_note": "Mutual and broker/agent route.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_continental",
+      "insurer_group": "Continental",
+      "legal_entities": [
+        "Continental Casualty Company"
+      ],
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.cnacanada.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "CNA's public Canadian auto product is commercial auto, not a standard personal-auto quote path.",
+      "validation_note": "CNA specialty/commercial route; validate personal-auto relevance.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_definity",
+      "insurer_group": "Definity",
+      "legal_entities": [
+        "Definity Insurance Company",
+        "Sonnet Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "sonnet",
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.definityfinancial.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Sonnet is direct online but requires both VIN and driver licence number. Broker businesses may surface through comparison panels.",
+      "validation_note": "Economical/Definity broker programs and Sonnet direct.",
+      "current_market_note": "Definity completed its acquisition of Travelers Canada's personal insurance business on January 2, 2026.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_desjardins",
+      "insurer_group": "Desjardins",
+      "legal_entities": [
+        "Certas Direct Insurance Company",
+        "Certas Home and Auto Insurance Company",
+        "The Personal Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "desjardins",
+        "thepersonal"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.desjardins.com/en/insurance/auto.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Desjardins offers an online quote; The Personal is an affinity route that needs an eligible employer or organization.",
+      "validation_note": "Desjardins web/agent; The Personal is affinity-restricted.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_economical",
+      "insurer_group": "Economical",
+      "legal_entities": [
+        "Economical Mutual Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.economical.com/en/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Broker-distributed. A comparison form can test the market, but the returned legal entity and final broker verification must be recorded.",
+      "validation_note": "Broker route; map the current legal entity/program.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_fa",
+      "insurer_group": "FA",
+      "legal_entities": [
+        "Facility Association"
+      ],
+      "consumer_route_ids": [
+        "facility"
+      ],
+      "access_class": "residual",
+      "channel": "licensed_intermediary",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://facilityassociation.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Not a normal shopping quote. A licensed broker uses the residual market only when ordinary insurers will not place the risk.",
+      "validation_note": "Residual market through a licensed intermediary.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_fmre",
+      "insurer_group": "FMRe",
+      "legal_entities": [
+        "Farm Mutual Reinsurance Plan Inc. (on behalf of Ontario Mutuals)"
+      ],
+      "consumer_route_ids": [
+        "mutuals"
+      ],
+      "access_class": "mutual_local",
+      "channel": "local_agent",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.farmmutualre.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "The Ontario Mutuals locator identifies a territory-specific mutual; the locator itself does not return a premium.",
+      "validation_note": "Use the Ontario Mutuals locator and identify the specific mutual.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_gore",
+      "insurer_group": "Gore",
+      "legal_entities": [
+        "Gore Mutual Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.goremutual.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Broker-distributed personal auto. A panel may return Gore, but it cannot be forced for every profile.",
+      "validation_note": "Broker route.",
+      "current_market_note": "Gore merged with Beneva on January 1, 2026; its legal name is now Gore Insurance Company while the seed retains the prior name.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_hartford",
+      "insurer_group": "Hartford",
+      "legal_entities": [
+        "Hartford Fire Insurance Company"
+      ],
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.thehartford.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "No verified standard Ontario personal-auto route. Do not count its commercial programs as a missing consumer quote.",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_heartland",
+      "insurer_group": "Heartland",
+      "legal_entities": [
+        "Heartland Farm Mutual Inc."
+      ],
+      "consumer_route_ids": [
+        "mutuals"
+      ],
+      "access_class": "mutual_local",
+      "channel": "local_agent",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.heartlandmutualinsurance.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Territory and appetite must be checked with a local mutual agent or broker before a quote can exist.",
+      "validation_note": "Mutual/local agent or broker.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_intact",
+      "insurer_group": "Intact",
+      "legal_entities": [
+        "Belair Insurance Company Inc.",
+        "The Guarantee Company of North America",
+        "Intact Insurance Company",
+        "Jevco Insurance Company",
+        "Novex Insurance Company",
+        "Royal & SunAlliance Insurance Company of Canada",
+        "Unifund Assurance Company",
+        "Western Assurance Company"
+      ],
+      "consumer_route_ids": [
+        "belairdirect",
+        "rates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.intact.ca/on/en/personal-insurance/vehicle/car.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "belairdirect is the direct web route; Intact and Jevco are broker routes, and Jevco commonly handles non-standard risk.",
+      "validation_note": "belairdirect is direct; Intact and Jevco are broker routes.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_liberty",
+      "insurer_group": "Liberty",
+      "legal_entities": [
+        "Liberty Mutual Insurance Company"
+      ],
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.libertymutualcanada.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Liberty Mutual Canada's public auto appetite is commercial and generally excludes stand-alone small auto accounts.",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_northbridge",
+      "insurer_group": "Northbridge",
+      "legal_entities": [
+        "Federated Insurance Company of Canada",
+        "Northbridge General Insurance Corporation",
+        "Verassure Insurance Company",
+        "Zenith Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.northbridgeinsurance.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Northbridge/Zenith are broker-panel candidates. A returned quote must identify the exact underwriting entity.",
+      "validation_note": "Northbridge and Zenith broker routes; validate product scope.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_optimum",
+      "insurer_group": "Optimum",
+      "legal_entities": [
+        "Optimum Insurance Company Inc."
+      ],
+      "consumer_route_ids": [
+        "rates",
+        "surex"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.optimum-general.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Private auto is available in Ontario exclusively through selected independent brokers.",
+      "validation_note": "Broker route.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_pure",
+      "insurer_group": "PURE",
+      "legal_entities": [
+        "PURE Insurance"
+      ],
+      "consumer_route_ids": [],
+      "access_class": "high_net_worth",
+      "channel": "broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.pureinsurance.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "High-net-worth placement through a specialist broker; not a normal mass-market web quote.",
+      "validation_note": "High-net-worth broker.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_peel",
+      "insurer_group": "Peel",
+      "legal_entities": [
+        "Peel Mutual Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "rates",
+        "mutuals"
+      ],
+      "access_class": "mutual_local",
+      "channel": "local_agent",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.peelmutual.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Peel provides auto through local agents and brokers; a panel may surface it but cannot guarantee it.",
+      "validation_note": "Mutual/local agent or broker.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_portage",
+      "insurer_group": "Portage",
+      "legal_entities": [
+        "The Portage la Prairie Mutual Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "rates",
+        "surex"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.portagemutual.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Ontario personal auto is broker-distributed. The broker must confirm appetite and return the actual premium.",
+      "validation_note": "Broker route.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_sgi",
+      "insurer_group": "SGI",
+      "legal_entities": [
+        "Coachman Insurance Company",
+        "SGI CANADA Insurance Services Ltd."
+      ],
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://sgicanada.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Broker route. Coachman is mainly non-standard, so a clean profile may not receive it even when the panel is queried.",
+      "validation_note": "Broker route; Coachman is commonly non-standard.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_sompo",
+      "insurer_group": "Sompo",
+      "legal_entities": [
+        "Endurance Specialty Insurance Ltd.",
+        "Sompo Japan Insurance Inc."
+      ],
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.sompo-intl.com/locations/canada/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "No verified standard Ontario personal-auto path. Preserve as regulatory research, not a consumer quote target.",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_td",
+      "insurer_group": "TD",
+      "legal_entities": [
+        "Primmum Insurance Company",
+        "Security National Insurance Company",
+        "TD General Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "td"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.tdinsurance.com/products-services/auto-car-insurance",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Online quote and eligible online purchase are available; some profiles are redirected to a licensed advisor.",
+      "validation_note": "TD online, phone and affinity routes; capture the returned legal entity.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_tokio",
+      "insurer_group": "Tokio",
+      "legal_entities": [
+        "Tokio Marine and Nichido Fire Insurance Company Limited"
+      ],
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.tokiomarine.com/ca/en/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "No verified standard Ontario personal-auto shopping route. Track only if a licensed specialty broker proves relevance.",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_travelers",
+      "insurer_group": "Travelers",
+      "legal_entities": [
+        "The Dominion of Canada General Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.travelerscanada.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Broker-distributed personal auto can still surface as a rate source, but current ownership must be deduplicated against Definity.",
+      "validation_note": "Broker route; retain the seed row and normalize the current owner separately.",
+      "current_market_note": "Definity acquired Travelers Canada's personal insurance business and The Dominion of Canada General Insurance Company on January 2, 2026.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_wawanesa",
+      "insurer_group": "Wawanesa",
+      "legal_entities": [
+        "The Wawanesa Mutual Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "rates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.wawanesa.com/canada/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Ontario quote requests go through an insurance broker; Wawanesa does not provide a direct consumer quote engine.",
+      "validation_note": "Broker route.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_xl",
+      "insurer_group": "XL",
+      "legal_entities": [
+        "XL Specialty Insurance Company"
+      ],
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://axaxl.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "No verified standard Ontario personal-auto path. Keep for seed completeness and specialty research only.",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "current_market_note": null,
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_group_zurich",
+      "insurer_group": "Zurich",
+      "legal_entities": [
+        "Zurich Insurance Company"
+      ],
+      "consumer_route_ids": [
+        "squareone"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.zurichcanada.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "access_summary": "Square One offers the consumer web quote; Zurich is the underwriter and should not be shown as a separate direct storefront.",
+      "validation_note": "Square One distributes Ontario car insurance underwritten by Zurich.",
+      "current_market_note": null,
+      "reference_only": true
+    }
+  ],
+  "legal_entities": [
+    {
+      "registry_id": "regulatory_entity_aig_01",
+      "legal_underwriter": "AIG Insurance Company of Canada",
+      "insurer_group": "AIG",
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.aig.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_allstate_01",
+      "legal_underwriter": "Allstate Insurance Company of Canada",
+      "insurer_group": "Allstate",
+      "consumer_route_ids": [
+        "allstate",
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.allstate.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Allstate direct; Pafco and Pembridge are broker-distributed.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_allstate_02",
+      "legal_underwriter": "Esurance Insurance Company of Canada",
+      "insurer_group": "Allstate",
+      "consumer_route_ids": [
+        "allstate",
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.allstate.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Allstate direct; Pafco and Pembridge are broker-distributed.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_allstate_03",
+      "legal_underwriter": "Pafco Insurance Company",
+      "insurer_group": "Allstate",
+      "consumer_route_ids": [
+        "allstate",
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.allstate.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Allstate direct; Pafco and Pembridge are broker-distributed.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_allstate_04",
+      "legal_underwriter": "Pembridge Insurance Company",
+      "insurer_group": "Allstate",
+      "consumer_route_ids": [
+        "allstate",
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.allstate.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Allstate direct; Pafco and Pembridge are broker-distributed.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_aviva_01",
+      "legal_underwriter": "Aviva General Insurance Company",
+      "insurer_group": "Aviva",
+      "consumer_route_ids": [
+        "aviva",
+        "rates",
+        "rbc",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.aviva.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Direct, RBC, broker and program routes require deduplication.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_aviva_02",
+      "legal_underwriter": "Aviva Insurance Company of Canada",
+      "insurer_group": "Aviva",
+      "consumer_route_ids": [
+        "aviva",
+        "rates",
+        "rbc",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.aviva.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Direct, RBC, broker and program routes require deduplication.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_aviva_03",
+      "legal_underwriter": "S&Y Insurance Company",
+      "insurer_group": "Aviva",
+      "consumer_route_ids": [
+        "aviva",
+        "rates",
+        "rbc",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.aviva.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Direct, RBC, broker and program routes require deduplication.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_aviva_04",
+      "legal_underwriter": "Scottish & York Insurance Co. Limited",
+      "insurer_group": "Aviva",
+      "consumer_route_ids": [
+        "aviva",
+        "rates",
+        "rbc",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.aviva.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Direct, RBC, broker and program routes require deduplication.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_aviva_05",
+      "legal_underwriter": "Traders General Insurance Company",
+      "insurer_group": "Aviva",
+      "consumer_route_ids": [
+        "aviva",
+        "rates",
+        "rbc",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.aviva.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Direct, RBC, broker and program routes require deduplication.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_beneva_01",
+      "legal_underwriter": "Unica Insurance Inc.",
+      "insurer_group": "Beneva",
+      "consumer_route_ids": [
+        "rates",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.beneva.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Broker route.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_caa_01",
+      "legal_underwriter": "CAA Insurance Company",
+      "insurer_group": "CAA",
+      "consumer_route_ids": [
+        "caa",
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.caainsurancecompany.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "CAA direct; Echelon broker/non-standard.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_caa_02",
+      "legal_underwriter": "Echelon Insurance",
+      "insurer_group": "CAA",
+      "consumer_route_ids": [
+        "caa",
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.caainsurancecompany.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "CAA direct; Echelon broker/non-standard.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_chubb_01",
+      "legal_underwriter": "Chubb Insurance Company of Canada",
+      "insurer_group": "Chubb",
+      "consumer_route_ids": [],
+      "access_class": "high_net_worth",
+      "channel": "broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.chubb.com/ca-en/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "High-net-worth or specialty broker.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_coop_01",
+      "legal_underwriter": "COSECO Insurance Company",
+      "insurer_group": "Co-op",
+      "consumer_route_ids": [
+        "cooperators"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.cooperators.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Co-operators web/agent; affinity and specialty entities need validation.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_coop_02",
+      "legal_underwriter": "CUMIS General Insurance Company",
+      "insurer_group": "Co-op",
+      "consumer_route_ids": [
+        "cooperators"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.cooperators.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Co-operators web/agent; affinity and specialty entities need validation.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_coop_03",
+      "legal_underwriter": "Co-operators General Insurance Company",
+      "insurer_group": "Co-op",
+      "consumer_route_ids": [
+        "cooperators"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.cooperators.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Co-operators web/agent; affinity and specialty entities need validation.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_coop_04",
+      "legal_underwriter": "The Sovereign General Insurance Company",
+      "insurer_group": "Co-op",
+      "consumer_route_ids": [
+        "cooperators"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.cooperators.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Co-operators web/agent; affinity and specialty entities need validation.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_commonwell_01",
+      "legal_underwriter": "The Commonwell Mutual Insurance Group",
+      "insurer_group": "Commonwell",
+      "consumer_route_ids": [
+        "mutuals",
+        "thinkinsure"
+      ],
+      "access_class": "mutual_local",
+      "channel": "local_agent",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://thecommonwell.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Mutual and broker/agent route.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_continental_01",
+      "legal_underwriter": "Continental Casualty Company",
+      "insurer_group": "Continental",
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.cnacanada.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "CNA specialty/commercial route; validate personal-auto relevance.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_definity_01",
+      "legal_underwriter": "Definity Insurance Company",
+      "insurer_group": "Definity",
+      "consumer_route_ids": [
+        "sonnet",
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.definityfinancial.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Economical/Definity broker programs and Sonnet direct.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_definity_02",
+      "legal_underwriter": "Sonnet Insurance Company",
+      "insurer_group": "Definity",
+      "consumer_route_ids": [
+        "sonnet",
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.definityfinancial.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Economical/Definity broker programs and Sonnet direct.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_desjardins_01",
+      "legal_underwriter": "Certas Direct Insurance Company",
+      "insurer_group": "Desjardins",
+      "consumer_route_ids": [
+        "desjardins",
+        "thepersonal"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.desjardins.com/en/insurance/auto.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Desjardins web/agent; The Personal is affinity-restricted.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_desjardins_02",
+      "legal_underwriter": "Certas Home and Auto Insurance Company",
+      "insurer_group": "Desjardins",
+      "consumer_route_ids": [
+        "desjardins",
+        "thepersonal"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.desjardins.com/en/insurance/auto.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Desjardins web/agent; The Personal is affinity-restricted.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_desjardins_03",
+      "legal_underwriter": "The Personal Insurance Company",
+      "insurer_group": "Desjardins",
+      "consumer_route_ids": [
+        "desjardins",
+        "thepersonal"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.desjardins.com/en/insurance/auto.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Desjardins web/agent; The Personal is affinity-restricted.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_economical_01",
+      "legal_underwriter": "Economical Mutual Insurance Company",
+      "insurer_group": "Economical",
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.economical.com/en/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Broker route; map the current legal entity/program.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_fa_01",
+      "legal_underwriter": "Facility Association",
+      "insurer_group": "FA",
+      "consumer_route_ids": [
+        "facility"
+      ],
+      "access_class": "residual",
+      "channel": "licensed_intermediary",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://facilityassociation.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Residual market through a licensed intermediary.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_fmre_01",
+      "legal_underwriter": "Farm Mutual Reinsurance Plan Inc. (on behalf of Ontario Mutuals)",
+      "insurer_group": "FMRe",
+      "consumer_route_ids": [
+        "mutuals"
+      ],
+      "access_class": "mutual_local",
+      "channel": "local_agent",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.farmmutualre.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Use the Ontario Mutuals locator and identify the specific mutual.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_gore_01",
+      "legal_underwriter": "Gore Mutual Insurance Company",
+      "insurer_group": "Gore",
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.goremutual.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Broker route.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_hartford_01",
+      "legal_underwriter": "Hartford Fire Insurance Company",
+      "insurer_group": "Hartford",
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.thehartford.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_heartland_01",
+      "legal_underwriter": "Heartland Farm Mutual Inc.",
+      "insurer_group": "Heartland",
+      "consumer_route_ids": [
+        "mutuals"
+      ],
+      "access_class": "mutual_local",
+      "channel": "local_agent",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.heartlandmutualinsurance.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Mutual/local agent or broker.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_intact_01",
+      "legal_underwriter": "Belair Insurance Company Inc.",
+      "insurer_group": "Intact",
+      "consumer_route_ids": [
+        "belairdirect",
+        "rates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.intact.ca/on/en/personal-insurance/vehicle/car.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "belairdirect is direct; Intact and Jevco are broker routes.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_intact_02",
+      "legal_underwriter": "The Guarantee Company of North America",
+      "insurer_group": "Intact",
+      "consumer_route_ids": [
+        "belairdirect",
+        "rates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.intact.ca/on/en/personal-insurance/vehicle/car.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "belairdirect is direct; Intact and Jevco are broker routes.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_intact_03",
+      "legal_underwriter": "Intact Insurance Company",
+      "insurer_group": "Intact",
+      "consumer_route_ids": [
+        "belairdirect",
+        "rates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.intact.ca/on/en/personal-insurance/vehicle/car.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "belairdirect is direct; Intact and Jevco are broker routes.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_intact_04",
+      "legal_underwriter": "Jevco Insurance Company",
+      "insurer_group": "Intact",
+      "consumer_route_ids": [
+        "belairdirect",
+        "rates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.intact.ca/on/en/personal-insurance/vehicle/car.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "belairdirect is direct; Intact and Jevco are broker routes.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_intact_05",
+      "legal_underwriter": "Novex Insurance Company",
+      "insurer_group": "Intact",
+      "consumer_route_ids": [
+        "belairdirect",
+        "rates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.intact.ca/on/en/personal-insurance/vehicle/car.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "belairdirect is direct; Intact and Jevco are broker routes.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_intact_06",
+      "legal_underwriter": "Royal & SunAlliance Insurance Company of Canada",
+      "insurer_group": "Intact",
+      "consumer_route_ids": [
+        "belairdirect",
+        "rates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.intact.ca/on/en/personal-insurance/vehicle/car.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "belairdirect is direct; Intact and Jevco are broker routes.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_intact_07",
+      "legal_underwriter": "Unifund Assurance Company",
+      "insurer_group": "Intact",
+      "consumer_route_ids": [
+        "belairdirect",
+        "rates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.intact.ca/on/en/personal-insurance/vehicle/car.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "belairdirect is direct; Intact and Jevco are broker routes.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_intact_08",
+      "legal_underwriter": "Western Assurance Company",
+      "insurer_group": "Intact",
+      "consumer_route_ids": [
+        "belairdirect",
+        "rates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.intact.ca/on/en/personal-insurance/vehicle/car.html",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "belairdirect is direct; Intact and Jevco are broker routes.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_liberty_01",
+      "legal_underwriter": "Liberty Mutual Insurance Company",
+      "insurer_group": "Liberty",
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.libertymutualcanada.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_northbridge_01",
+      "legal_underwriter": "Federated Insurance Company of Canada",
+      "insurer_group": "Northbridge",
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.northbridgeinsurance.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Northbridge and Zenith broker routes; validate product scope.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_northbridge_02",
+      "legal_underwriter": "Northbridge General Insurance Corporation",
+      "insurer_group": "Northbridge",
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.northbridgeinsurance.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Northbridge and Zenith broker routes; validate product scope.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_northbridge_03",
+      "legal_underwriter": "Verassure Insurance Company",
+      "insurer_group": "Northbridge",
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.northbridgeinsurance.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Northbridge and Zenith broker routes; validate product scope.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_northbridge_04",
+      "legal_underwriter": "Zenith Insurance Company",
+      "insurer_group": "Northbridge",
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.northbridgeinsurance.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Northbridge and Zenith broker routes; validate product scope.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_optimum_01",
+      "legal_underwriter": "Optimum Insurance Company Inc.",
+      "insurer_group": "Optimum",
+      "consumer_route_ids": [
+        "rates",
+        "surex"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.optimum-general.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Broker route.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_pure_01",
+      "legal_underwriter": "PURE Insurance",
+      "insurer_group": "PURE",
+      "consumer_route_ids": [],
+      "access_class": "high_net_worth",
+      "channel": "broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.pureinsurance.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "High-net-worth broker.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_peel_01",
+      "legal_underwriter": "Peel Mutual Insurance Company",
+      "insurer_group": "Peel",
+      "consumer_route_ids": [
+        "rates",
+        "mutuals"
+      ],
+      "access_class": "mutual_local",
+      "channel": "local_agent",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.peelmutual.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Mutual/local agent or broker.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_portage_01",
+      "legal_underwriter": "The Portage la Prairie Mutual Insurance Company",
+      "insurer_group": "Portage",
+      "consumer_route_ids": [
+        "rates",
+        "surex"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.portagemutual.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Broker route.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_sgi_01",
+      "legal_underwriter": "Coachman Insurance Company",
+      "insurer_group": "SGI",
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://sgicanada.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Broker route; Coachman is commonly non-standard.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_sgi_02",
+      "legal_underwriter": "SGI CANADA Insurance Services Ltd.",
+      "insurer_group": "SGI",
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://sgicanada.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Broker route; Coachman is commonly non-standard.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_sompo_01",
+      "legal_underwriter": "Endurance Specialty Insurance Ltd.",
+      "insurer_group": "Sompo",
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.sompo-intl.com/locations/canada/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_sompo_02",
+      "legal_underwriter": "Sompo Japan Insurance Inc.",
+      "insurer_group": "Sompo",
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.sompo-intl.com/locations/canada/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_td_01",
+      "legal_underwriter": "Primmum Insurance Company",
+      "insurer_group": "TD",
+      "consumer_route_ids": [
+        "td"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.tdinsurance.com/products-services/auto-car-insurance",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "TD online, phone and affinity routes; capture the returned legal entity.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_td_02",
+      "legal_underwriter": "Security National Insurance Company",
+      "insurer_group": "TD",
+      "consumer_route_ids": [
+        "td"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.tdinsurance.com/products-services/auto-car-insurance",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "TD online, phone and affinity routes; capture the returned legal entity.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_td_03",
+      "legal_underwriter": "TD General Insurance Company",
+      "insurer_group": "TD",
+      "consumer_route_ids": [
+        "td"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.tdinsurance.com/products-services/auto-car-insurance",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "TD online, phone and affinity routes; capture the returned legal entity.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_tokio_01",
+      "legal_underwriter": "Tokio Marine and Nichido Fire Insurance Company Limited",
+      "insurer_group": "Tokio",
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.tokiomarine.com/ca/en/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_travelers_01",
+      "legal_underwriter": "The Dominion of Canada General Insurance Company",
+      "insurer_group": "Travelers",
+      "consumer_route_ids": [
+        "rates",
+        "lowestrates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.travelerscanada.ca/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Broker route; retain the seed row and normalize the current owner separately.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_wawanesa_01",
+      "legal_underwriter": "The Wawanesa Mutual Insurance Company",
+      "insurer_group": "Wawanesa",
+      "consumer_route_ids": [
+        "rates",
+        "surex",
+        "thinkinsure"
+      ],
+      "access_class": "broker_panel",
+      "channel": "broker",
+      "status": "manual_handoff",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.wawanesa.com/canada/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Broker route.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_xl_01",
+      "legal_underwriter": "XL Specialty Insurance Company",
+      "insurer_group": "XL",
+      "consumer_route_ids": [],
+      "access_class": "commercial_specialty",
+      "channel": "specialty_broker",
+      "status": "specialty_only",
+      "distinct_rate_source_id": null,
+      "source_url": "https://axaxl.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Specialty/commercial broker; validate personal-auto relevance.",
+      "reference_only": true
+    },
+    {
+      "registry_id": "regulatory_entity_zurich_01",
+      "legal_underwriter": "Zurich Insurance Company",
+      "insurer_group": "Zurich",
+      "consumer_route_ids": [
+        "squareone"
+      ],
+      "access_class": "direct_online",
+      "channel": "web",
+      "status": "unresolved",
+      "distinct_rate_source_id": null,
+      "source_url": "https://www.zurichcanada.com/",
+      "last_verified_at": "2026-08-06T00:00:00Z",
+      "validation_note": "Square One distributes Ontario car insurance underwritten by Zurich.",
+      "reference_only": true
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "agents": [
+    {
+      "config": "agent_configs/ReachRate-Quote-Handoff.json",
+      "id": "YOUR_AGENT_ID",
+      "version_id": "YOUR_AGENT_VERSION_ID",
+      "branch_id": "YOUR_AGENT_BRANCH_ID"
+    }
+  ]
+}

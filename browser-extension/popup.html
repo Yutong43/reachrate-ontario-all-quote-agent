@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ReachRate Quote Copilot</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <header class="brand"><span>RR</span><div><strong>ReachRate</strong><small>Quote Copilot</small></div><b class="version">v0.5.2</b></header>
+      <div id="state" class="state"><i></i><span>Checking active quote tab</span></div>
+
+      <section id="route-panel" class="route-panel" hidden>
+        <p class="eyebrow">Active profile</p>
+        <h1 id="profile-name">ReachRate profile</h1>
+        <p id="profile-detail" class="profile-detail">Load a local profile from ReachRate</p>
+        <div class="route-row"><span>Official route</span><strong id="route-name">Aviva Direct</strong></div>
+        <button id="autofill" class="primary" type="button">Autofill this quote</button>
+        <p id="autofill-note" class="note">Fills the reviewed postal code and vehicle profile, then pauses before declarations, CAPTCHA, identity checks or consent.</p>
+
+        <div class="divider"></div>
+        <button id="manual-toggle" class="text-button" type="button">Manually update a visible price</button>
+        <form id="manual-form" hidden>
+          <label>Company / returned insurer<input id="source-brand" autocomplete="off" required /></label>
+          <label>Returned insurer / legal underwriter<input id="underwriter" autocomplete="off" placeholder="Required for brokers and comparison sites" /></label>
+          <div class="manual-row">
+            <label>Premium (CAD)<input id="premium" type="text" inputmode="decimal" pattern="[0-9$,. ]+" placeholder="200.00" autocomplete="off" required /></label>
+            <label>Period<select id="period"><option value="monthly">Monthly</option><option value="annual">Annual</option></select></label>
+          </div>
+          <button id="send-result" class="secondary" type="submit">Send price to ReachRate</button>
+          <p class="note">Use only a price visible on this official page. It returns directly to the matching ReachRate route card.</p>
+        </form>
+      </section>
+
+      <section id="empty-panel" class="empty-panel">
+        <h1>Open a quote route first.</h1>
+        <p>Start Aviva Direct or Rates.ca from ReachRate. The active profile and Autofill controls will appear here.</p>
+      </section>
+
+      <div id="feedback" class="feedback" role="status" hidden></div>
+      <button id="open-app" class="open-app" type="button">Open local ReachRate</button>
+      <footer>Allowlisted sites only · no CAPTCHA bypass · review before save</footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

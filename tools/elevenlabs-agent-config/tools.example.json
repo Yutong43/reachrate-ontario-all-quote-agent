@@ -1,0 +1,9 @@
+{
+  "tools": [
+    {
+      "type": "webhook",
+      "config": "tool_configs/record_quote_outcome.json",
+      "id": "YOUR_TOOL_ID"
+    }
+  ]
+}

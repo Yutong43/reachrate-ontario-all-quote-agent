@@ -1,0 +1,101 @@
+{
+  "name": "record_quote_outcome",
+  "description": "Persist one terminal private-number rehearsal outcome as a synthetic manual_handoff. After consent, it may include a clearly spoken numeric premium; without consent it may store only a minimal human-request status with no premium. Every record remains excluded from official market ranking.",
+  "type": "webhook",
+  "api_schema": {
+    "url": "https://YOUR_PROJECT_REF.supabase.co/functions/v1/quote-persistence",
+    "method": "POST",
+    "request_body_schema": {
+      "type": "object",
+      "description": "A normalized synthetic phone-demo outcome.",
+      "properties": {
+        "runId": {
+          "type": "string",
+          "dynamic_variable": "run_id"
+        },
+        "registryId": {
+          "type": "string",
+          "dynamic_variable": "demo_registry_id"
+        },
+        "marketName": {
+          "type": "string",
+          "dynamic_variable": "route_label"
+        },
+        "outcomeStatus": {
+          "type": "string",
+          "description": "Use manual_handoff for both a consented synthetic spoken-price result and a declined-AI human request. Use unreachable only when the call ends without consent, price or a handoff request.",
+          "enum": [
+            "manual_handoff",
+            "unreachable"
+          ]
+        },
+        "premiumAmount": {
+          "type": "number",
+          "description": "The numeric amount actually spoken in the role-play, for example 200 or 220. Normalize pounds, dollars or bucks to a numeric CAD demo amount. Include only after consent; omit for a human request or unreachable outcome."
+        },
+        "premiumPeriod": {
+          "type": "string",
+          "description": "The period actually stated for the premium. Omit when no premium was provided.",
+          "enum": [
+            "monthly",
+            "annual"
+          ]
+        },
+        "coverageSummary": {
+          "type": "string",
+          "description": "For a spoken-price result, use the supplied synthetic profile and coverage summaries. For handoff or unreachable, use 'No quote details collected.'"
+        },
+        "quoteReference": {
+          "type": "string",
+          "description": "A non-sensitive quote reference actually provided. Omit when none was provided."
+        },
+        "blocker": {
+          "type": "string",
+          "description": "For manual_handoff use 'AI assistance declined; participant requested a real person.' Omit when a spoken demo premium was captured."
+        },
+        "evidenceNote": {
+          "type": "string",
+          "constant_value": "Supervised private-number simulation; excluded from market metrics."
+        },
+        "consentConfirmed": {
+          "type": "boolean",
+          "description": "Set true only after the person affirmatively agreed to continue and save a structured non-audio demo summary. It may be false for a minimal human-handoff status with no premium or quote details."
+        },
+        "isSimulation": {
+          "type": "boolean",
+          "constant_value": true
+        },
+        "conversationId": {
+          "type": "string",
+          "dynamic_variable": "system__conversation_id"
+        }
+      },
+      "required": [
+        "runId",
+        "registryId",
+        "marketName",
+        "outcomeStatus",
+        "coverageSummary",
+        "evidenceNote",
+        "consentConfirmed",
+        "isSimulation",
+        "conversationId"
+      ]
+    },
+    "request_headers": {
+      "Content-Type": "application/json",
+      "x-elevenlabs-tool-secret": {
+        "secret_id": "YOUR_ELEVENLABS_SECRET_ID"
+      }
+    }
+  },
+  "response_timeout_secs": 20,
+  "dynamic_variables": {
+    "dynamic_variable_placeholders": {
+      "run_id": "demo-run-local"
+    }
+  },
+  "assignments": [],
+  "disable_interruptions": true,
+  "force_pre_tool_speech": false
+}

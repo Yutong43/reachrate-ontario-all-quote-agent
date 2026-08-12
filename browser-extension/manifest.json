@@ -1,0 +1,72 @@
+{
+  "manifest_version": 3,
+  "name": "ReachRate Quote Copilot",
+  "version": "0.5.2",
+  "description": "Supervised Ontario auto-quote autofill, checkpoint detection and evidence capture for the local ReachRate demo.",
+  "permissions": ["storage", "tabs", "webNavigation"],
+  "host_permissions": [
+    "http://127.0.0.1:3000/*",
+    "http://localhost:3000/*",
+    "https://*.allstate.ca/*",
+    "https://*.aviva.ca/*",
+    "https://*.avivainsurance.ca/*",
+    "https://*.squareone.ca/*",
+    "https://*.rates.ca/*",
+    "https://*.tdinsurance.com/*",
+    "https://*.caasco.com/*",
+    "https://*.desjardins.com/*",
+    "https://*.belairdirect.com/*",
+    "https://*.sonnet.ca/*",
+    "https://*.lowestrates.ca/*",
+    "https://*.cooperators.ca/*",
+    "https://*.rbcinsurance.com/*",
+    "https://*.thepersonal.com/*",
+    "https://*.surex.com/*",
+    "https://*.thinkinsure.ca/*",
+    "https://*.onlia.ca/*",
+    "https://*.pcinsurance.ca/*",
+    "https://*.inovainc.ca/*",
+    "https://*.insurancehotline.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "ReachRate Quote Copilot",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://127.0.0.1:3000/*", "http://localhost:3000/*"],
+      "js": ["app-bridge.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://*.allstate.ca/*",
+        "https://*.aviva.ca/*",
+        "https://*.avivainsurance.ca/*",
+        "https://*.squareone.ca/*",
+        "https://*.rates.ca/*",
+        "https://*.tdinsurance.com/*",
+        "https://*.caasco.com/*",
+        "https://*.desjardins.com/*",
+        "https://*.belairdirect.com/*",
+        "https://*.sonnet.ca/*",
+        "https://*.lowestrates.ca/*",
+        "https://*.cooperators.ca/*",
+        "https://*.rbcinsurance.com/*",
+        "https://*.thepersonal.com/*",
+        "https://*.surex.com/*",
+        "https://*.thinkinsure.ca/*",
+        "https://*.onlia.ca/*",
+        "https://*.pcinsurance.ca/*",
+        "https://*.inovainc.ca/*",
+        "https://*.insurancehotline.com/*"
+      ],
+      "js": ["routes.js", "content-script.js"],
+      "css": ["overlay.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "schema_version": "1.0",
+  "run_id": "redacted-audit-2026-08-11",
+  "generated_at": "2026-08-12T18:46:44Z",
+  "source_audit_generated_at": "2026-08-11T20:24:39Z",
+  "timestamp_note": "Outcome captured_at values record when the redacted audit artifact was assembled; they are not insurer transaction timestamps.",
+  "mode": "supervised_discovery_and_handoff",
+  "profile": {
+    "alias": "Participant-owned clean profile",
+    "vehicle": "2025 Toyota Corolla LE - planned/new/financed - 5,000 km/year",
+    "licence_class": "Ontario G",
+    "first_licensed_year": "2017",
+    "postal_code_redacted": "M2* ***",
+    "vin_provided": false,
+    "sensitive_fields_in_report": false
+  },
+  "comparison_benchmark": {
+    "currency": "CAD",
+    "term_months": 12,
+    "liability_limit": 2000000,
+    "dcpd": "included_requested",
+    "mandatory_accident_benefits": "requested_current_Ontario_standard",
+    "collision": "included_requested",
+    "comprehensive": "included_requested",
+    "collision_deductible": 1000,
+    "comprehensive_deductible": 1000,
+    "opcf44r": "included_requested",
+    "telematics": "not_selected"
+  },
+  "coverage_ledger": [
+    {
+      "registry_id": "direct_aviva_on",
+      "brand_or_program": "Aviva Direct",
+      "legal_underwriter": "S&Y Insurance Company",
+      "insurer_group": "Aviva",
+      "intermediary": "Aviva Agency Services Inc.",
+      "distinct_rate_source_id": "aviva_returned_program_required",
+      "channel": "web",
+      "status": "manual_handoff",
+      "result_type": "no_quote_handoff",
+      "premium": {
+        "monthly": null,
+        "annual": null,
+        "currency": "CAD",
+        "fees": "unknown"
+      },
+      "coverage": {
+        "liability_limit": 2000000,
+        "dcpd": "requested_not_returned",
+        "collision": "requested_not_returned",
+        "comprehensive": "requested_not_returned",
+        "deductible": 1000,
+        "opcf44r": "requested_not_returned",
+        "telematics": "not_selected"
+      },
+      "coverage_differences": [
+        "No policy coverage was returned before the applicant declaration checkpoint."
+      ],
+      "reference_id": "Q022763742",
+      "validity": "No premium or guarantee period was returned.",
+      "failure_reason": "The official journey reached an applicant-controlled assumptions declaration.",
+      "next_action": "The participant must personally review and truthfully accept or reject the declaration, then resume the same tab.",
+      "confidence": "low",
+      "captured_at": "2026-08-11T20:24:39Z",
+      "source_url": "https://www.aviva.ca/en/direct/",
+      "evidence_artifact": "data/online-route-audit.json#route_id=aviva",
+      "evidence_hash": "sha256:ea8612cdc46a4aca2634cbb088d1ac20e0d10b5af338b810ef5b7911761fa9c3",
+      "evidence_note": "Vehicle, driver and history stages completed. Reference ID is journey-progress evidence only and is not a premium.",
+      "fields_disclosed": "Only reviewed non-secret profile fields required before the declaration; no licence number, full address, phone, email or VIN is retained in this report.",
+      "consent_receipt": "Route attempt authorized in the ReachRate review screen; the applicant declaration remained human-controlled.",
+      "retention_deadline": "Delete after judging unless the participant explicitly chooses otherwise.",
+      "redaction_checked": true,
+      "is_simulation": false,
+      "excluded_from_rankings": true
+    },
+    {
+      "registry_id": "direct_sonnet_on",
+      "brand_or_program": "Sonnet",
+      "legal_underwriter": "Sonnet Insurance Company",
+      "insurer_group": "Definity",
+      "intermediary": null,
+      "distinct_rate_source_id": "sonnet_definity_direct_on",
+      "channel": "web",
+      "status": "ineligible",
+      "result_type": "exact_profile_blocker",
+      "premium": {
+        "monthly": null,
+        "annual": null,
+        "currency": "CAD",
+        "fees": "not_applicable"
+      },
+      "coverage": {
+        "liability_limit": 2000000,
+        "dcpd": "not_reached",
+        "collision": "not_reached",
+        "comprehensive": "not_reached",
+        "deductible": 1000,
+        "opcf44r": "not_reached",
+        "telematics": "not_selected"
+      },
+      "coverage_differences": [
+        "No policy coverage was returned because the current planned vehicle has no VIN.",
+        "The official route also requires the participant's own driver's licence number."
+      ],
+      "reference_id": null,
+      "validity": "Applies to this no-VIN demonstration profile; re-check with a real VIN before relying on it.",
+      "failure_reason": "The route requires a real VIN and the participant's own valid driver's licence number.",
+      "next_action": "Stop without fabricating either identifier; retry only if the participant later has a real VIN and chooses to provide the real licence at the official checkpoint.",
+      "confidence": "low",
+      "captured_at": "2026-08-11T20:24:39Z",
+      "source_url": "https://www.sonnet.ca/auto-insurance",
+      "evidence_artifact": "data/online-route-audit.json#route_id=sonnet",
+      "evidence_hash": "sha256:ea8612cdc46a4aca2634cbb088d1ac20e0d10b5af338b810ef5b7911761fa9c3",
+      "evidence_note": "Official quote requirements were checked against the planned-vehicle profile; no identifier was invented.",
+      "fields_disclosed": "No personal data was submitted to Sonnet for this requirements check.",
+      "consent_receipt": "Discovery-only requirements check; no identity verification or declaration was entered.",
+      "retention_deadline": "Delete after judging unless the participant explicitly chooses otherwise.",
+      "redaction_checked": true,
+      "is_simulation": false,
+      "excluded_from_rankings": true
+    },
+    {
+      "registry_id": "aggregator_mychoice_on",
+      "brand_or_program": "MyChoice",
+      "legal_underwriter": "Returned insurer must be captured from result",
+      "insurer_group": "Multiple / returned result",
+      "intermediary": "Returned brokerage must be captured",
+      "distinct_rate_source_id": "returned_underwriter_required",
+      "channel": "web_reference",
+      "status": "blocked",
+      "result_type": "terms_restriction",
+      "premium": {
+        "monthly": null,
+        "annual": null,
+        "currency": "CAD",
+        "fees": "not_applicable"
+      },
+      "coverage": {
+        "liability_limit": 2000000,
+        "dcpd": "not_reached",
+        "collision": "not_reached",
+        "comprehensive": "not_reached",
+        "deductible": 1000,
+        "opcf44r": "not_reached",
+        "telematics": "not_selected"
+      },
+      "coverage_differences": [
+        "No coverage or returned insurer was collected because automated access was not attempted."
+      ],
+      "reference_id": null,
+      "validity": "Terms and route status require re-verification if the destination changes.",
+      "failure_reason": "The current public terms restrict automated-device access; MyChoice is also an intermediary rather than the legal underwriter.",
+      "next_action": "Keep as a permitted manual/reference path only and normalize any returned insurer separately.",
+      "confidence": "low",
+      "captured_at": "2026-08-11T20:24:39Z",
+      "source_url": "https://www.mychoice.ca/insurance/car/",
+      "evidence_artifact": "data/online-route-audit.json#route_id=mychoice",
+      "evidence_hash": "sha256:ea8612cdc46a4aca2634cbb088d1ac20e0d10b5af338b810ef5b7911761fa9c3",
+      "evidence_note": "MyChoice is preserved in the market map but excluded from the automated run.",
+      "fields_disclosed": "None.",
+      "consent_receipt": "Not applicable; no profile fields were sent.",
+      "retention_deadline": "Delete after judging unless the participant explicitly chooses otherwise.",
+      "redaction_checked": true,
+      "is_simulation": false,
+      "excluded_from_rankings": true
+    },
+    {
+      "registry_id": "voice_simulation_demo_agent_1",
+      "brand_or_program": "Demo Carrier 1",
+      "legal_underwriter": null,
+      "insurer_group": null,
+      "intermediary": null,
+      "distinct_rate_source_id": "simulation_only",
+      "channel": "private_voice_rehearsal",
+      "status": "manual_handoff",
+      "result_type": "synthetic_demo",
+      "premium": {
+        "monthly": null,
+        "annual": null,
+        "currency": "CAD",
+        "fees": "not_applicable"
+      },
+      "coverage": {
+        "liability_limit": null,
+        "dcpd": "unknown",
+        "collision": "unknown",
+        "comprehensive": "unknown",
+        "deductible": null,
+        "opcf44r": "unknown",
+        "telematics": "unknown"
+      },
+      "coverage_differences": [
+        "Synthetic rehearsal only; it is never treated as an insurer result."
+      ],
+      "reference_id": null,
+      "validity": "Simulation only.",
+      "failure_reason": null,
+      "next_action": "Use only to demonstrate automation disclosure, consent, structured spoken-price capture and human-handoff handling.",
+      "confidence": "not_applicable",
+      "captured_at": "2026-08-09T16:37:42Z",
+      "source_url": null,
+      "evidence_artifact": "Structured redacted call outcome only; no audio retained.",
+      "evidence_hash": null,
+      "evidence_note": "A supervised call to the participant's own allowlisted number completed without retaining audio or a real market premium.",
+      "fields_disclosed": "Applicant display name and simulation context only; destination number is masked server-side.",
+      "consent_receipt": "Automation and simulation disclosed; structured retention requires separate affirmative consent.",
+      "retention_deadline": "Delete after judging unless the participant explicitly chooses otherwise.",
+      "redaction_checked": true,
+      "consent_confirmed": true,
+      "is_simulation": true,
+      "excluded_from_rankings": true
+    }
+  ],
+  "comparison": {
+    "ranked_market_results": [],
+    "result": "No official premium was returned, so no price ranking or insurer recommendation is made.",
+    "coverage_difference_summary": [
+      "Aviva reached the requested-profile journey but returned no coverage before a human declaration.",
+      "Sonnet could not reach policy coverage for the no-VIN profile and requires a real licence number.",
+      "MyChoice was not automated because of destination terms and intermediary identity."
+    ],
+    "simulation_results_excluded": true
+  },
+  "gaps": [
+    "No exact insurer premium was captured during the audited run.",
+    "Applicant-controlled full address, contact consent, licence/VIN and declarations remain unresolved on several routes.",
+    "Broker and comparison routes cannot be counted as insurer outcomes until they return and identify a legal underwriter."
+  ],
+  "errors": [
+    {
+      "registry_id": "direct_allstate_on",
+      "status": "unreachable",
+      "captured_at": "2026-08-11T20:24:39Z",
+      "message": "A supervised attempt encountered an official transient network error after the postal-code step; one later retry is permitted by the bounded-attempt policy."
+    }
+  ],
+  "metrics": {
+    "applicable_route_denominator": 17,
+    "evidence_backed_terminal_market_outcomes_in_this_report": 3,
+    "market_completion_for_this_report": 0.1765,
+    "comparable_quote_yield": 0,
+    "evidence_rate": 1,
+    "confirmed_price_count": 0,
+    "duplicate_suppression": "Shared engines are mapped through distinct_rate_source_id; no duplicate lead form is counted as a price."
+  },
+  "known_limitations_path": "README.md#known-limitations"
+}
